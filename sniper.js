@@ -21,3 +21,20 @@ async function snipinguser(username) {
     // auth + send request for username
 }
 
+async function beginsniping() {
+    console.log(`Sniping user: ${targetuser}`);
+    while (true) {
+        const isAvailable = await checkUsernameAvailability(targetuser);
+        if (isAvailable) {
+            console.log(`User  ${targetuser} is possible . . .`);
+            await snipinguser(targetuser);
+            break; 
+        } else {
+            console.log(`User  ${targetuser} isnt available. Sniping again in ${checkdelay / 1000} seconds...`);
+        }
+        await new Promise(resolve => setTimeout(resolve, checkdelay));
+    }
+}
+
+beginsniping();
+
