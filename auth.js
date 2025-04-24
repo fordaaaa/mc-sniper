@@ -24,4 +24,4 @@ async function authenticateUser (email, password) {
     }
 }
 
-module.exports = { authenticateUser  };
+module.exports = {authenticateUser};
