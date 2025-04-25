@@ -1,4 +1,4 @@
-const { axios } = require('./dependencies'); // subject to change due to broken dependencies.js file
+const { axios } = require('./package');
 
 async function authenticateUser (email, password) {
     try {
